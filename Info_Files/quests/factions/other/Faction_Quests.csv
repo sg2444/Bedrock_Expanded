@@ -1,0 +1,3 @@
+Faction,Quest ID,Quest Name,Trigger,Objectives,Rewards,Impact
+Order of the Iron Forge,FQ1,Forge Alliance,Player visits Forge after MQ06,"Clear out monsters in mine, mine rare ore","Forge access, refined pickaxe",Faction joins player for final siege if completed
+Order of the Eternal Library,FQ1,Secrets in the Sand,Reach desert library,"Solve entrance puzzle, defeat pyramid curse","Library access, low-tier magical item","Reveals lore, access to mage support in endgame"

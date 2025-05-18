@@ -1,0 +1,18 @@
+{
+  "name": "Bedrock Expanded",
+  "version": "0.1.0",
+  "productName": "Minecraft Bedrock Expanded",
+  "description": "Bedrock Expanded",
+  "private": true,
+  "scripts": {
+    "local-deploy": "rmdir /S /Q \"C:\\Users\\sgray\\AppData\\Local\\Packages\\Microsoft.MinecraftUWP_8wekyb3d8bbwe\\LocalState\\games\\com.mojang\\development_behavior_packs\\b_BedrockExpanded\" && rmdir /S /Q \"C:\\Users\\sgray\\AppData\\Local\\Packages\\Microsoft.MinecraftUWP_8wekyb3d8bbwe\\LocalState\\games\\com.mojang\\development_resource_packs\\r_BedrockExpanded\" && xcopy /E /I /Y b_BedrockExpanded \"C:\\Users\\sgray\\AppData\\Local\\Packages\\Microsoft.MinecraftUWP_8wekyb3d8bbwe\\LocalState\\games\\com.mojang\\development_behavior_packs\\b_BedrockExpanded\" && xcopy /E /I /Y r_BedrockExpanded \"C:\\Users\\sgray\\AppData\\Local\\Packages\\Microsoft.MinecraftUWP_8wekyb3d8bbwe\\LocalState\\games\\com.mojang\\development_resource_packs\\r_BedrockExpanded\"",
+    "enablemcloopback": "CheckNetIsolation.exe LoopbackExempt -a -p=S-1-15-2-1958404141-86561845-1752920682-3514627264-368642714-62675701-733520436",
+    "enablemcpreviewloopback": "CheckNetIsolation.exe LoopbackExempt -a -p=S-1-15-2-424268864-5579737-879501358-346833251-474568803-887069379-4040235476"
+  },
+  "dependencies": {
+    "@minecraft/math": "^1.4.0",
+    "@minecraft/server": "^2.0.0-beta.1.21.70-stable",
+    "@minecraft/server-ui": "^2.0.0-beta.1.21.70-stable",
+    "@minecraft/vanilla-data": "^1.21.20"
+  }
+}

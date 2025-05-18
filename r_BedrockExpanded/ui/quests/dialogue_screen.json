@@ -1,0 +1,518 @@
+{
+    "namespace": "be_dialogue",
+
+
+    "root@common.empty_panel": {
+        // container panel anchored from center to top middle with offset
+        "type": "panel",
+        "$npc_name|default": "",
+        "$npc_strip_value|default": "",
+        "controls": [
+
+            {
+                "background_stack@background_stack": {
+                    "anchor_from": "bottom_middle",
+                    "anchor_to": "bottom_middle",
+                    "offset": [0, -14]
+                }
+            },
+            {
+                "npc_screen_close@be_dialogue.close_text": {
+                  "anchor_to": "bottom_left",
+                  "anchor_from": "bottom_left",
+                  "offset": [ 20, 0 ]
+
+                }
+            }
+        ]
+    },
+
+    "background_stack": {
+        "type": "stack_panel",
+        "orientation": "vertical",
+
+        "size": [
+			235,
+			83
+		],
+        "controls": [
+            {
+                "top_panel": {
+                    "type": "panel",
+                    "size": [
+                        235,
+                        15
+                    ],
+                    "controls": [
+                        {
+                            "name_and_icon_container@name_and_icon_container": {
+                                "anchor_from": "top_left",
+                                "anchor_to": "top_left"
+                            }
+                        }
+                        ,
+                        {
+                            "x_close_button@x_close_button": {
+                                "anchor_from": "top_right",
+                                "anchor_to": "top_right"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "div": {
+                    "type": "panel",
+                    "size": [2, 2]
+                }
+            },
+            {
+                "npc_text_container@npc_text_container": {}
+            },
+            {
+                "continue_container": {
+                    "type": "panel",
+                    "size": [235,8],
+                    "controls": [
+                        {
+                            "button_grid@button_grid": {
+                                "anchor_from": "bottom_middle",
+                                "anchor_to": "top_middle"
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+
+    },
+
+
+    
+    // dialog text
+    "npc_text_container": {
+        "type": "panel",
+        "max_size": ["100%", "100%c"],
+        "controls": [
+            {
+                "background": {
+                    "texture": "textures/ui/hud_tip_text_background",
+                    "type": "image",
+                    "size": ["100%", "100%cm + 9px"],
+                    "min_size": ["100%", 39],
+                    "alpha": 0.7,
+                    "controls": [
+                        {
+                            "dropshadow": {
+                                "type": "label",
+                                "text": "#text",
+                                "anchor_from": "top_left",
+                                "anchor_to": "top_left",
+                                "color": "$dialog_text_dropshadow_color",
+                                "text_alignment": "left",
+                                "font_size": "normal",
+                                "font_scale_factor": 1.0,
+                                "shadow": false,
+                                "localize": false,
+                                "size": ["100% - 12px", "default"],
+                                "offset": [7,6],
+                                "bindings": [
+                                    {
+                                        "binding_name": "#dialogtext",
+                                        "binding_type": "global"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_property_name": "(#dialogtext - $npc_strip_value)",
+                                        "target_property_name": "#text"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "text": {
+                                "type": "label",
+                                "text": "#text",
+                                "anchor_from": "top_left",
+                                "anchor_to": "top_left",
+                                "color": "$dialog_text_color",
+                                "text_alignment": "left",
+                                "font_size": "normal",
+                                "font_scale_factor": 1.0,
+                                "shadow": false,
+                                "localize": false,
+                                "size": ["100% - 12px", "default"],
+                                "offset": [6,5],
+                                "bindings": [
+                                    {
+                                        "binding_name": "#dialogtext",
+                                        "binding_type": "global"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_property_name": "(#dialogtext - $npc_strip_value)",
+                                        "target_property_name": "#text"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+
+    // name and icon #title_text
+    "name_and_icon_container": {
+        "type": "image",
+        "texture": "textures/ui/hud_tip_text_background",
+        "alpha": "$dialogue_alpha",
+        "size": ["100%c + 8px", 15],
+        "controls": [
+            {
+                "text": {
+                    "type": "label",
+                    "text": "$npc_name",
+                    "anchor_from": "left_middle",
+                    "anchor_to": "left_middle",
+                    "color": "$close_button_hover_color",
+                    "text_alignment": "right",
+                    "font_size": "normal",
+                    "font_scale_factor": 1.0,
+                    "shadow": true,
+                    "localize": true,
+                    "offset": [4,0.6]
+                }
+            }
+        ]
+    },
+
+    // buttons
+    "button_grid": {
+		"type": "panel",
+        // adjust later
+		"size": [
+			60,
+			15
+		],
+		"controls": [
+			{
+				"buttons": {
+					"orientation": "horizontal",
+					"type": "stack_panel",
+					"size": [
+						"100% + 2px",
+						"100%cm"
+					],
+					"controls": [
+						{
+							"actions": {
+								"grid_item_template": "be_dialogue.button",
+								"grid_dimension_binding": "#student_button_grid_dimensions",
+								"type": "grid",
+								"size": [
+									"fill",
+									15
+								],
+								"collection_name": "student_buttons_collection",
+								"bindings": [
+									{
+										"binding_name": "#student_button_grid_dimensions"
+									}
+								]
+							}
+						}
+					]
+				}
+			}
+		]
+	},
+
+    "button": {
+		"type": "panel",
+		"size": [
+			60,
+			15
+		],
+		"anchor_from": "center",
+		"anchor_to": "center",
+		"controls": [
+			{
+				"ui_button@ui_button": {}
+			}
+		],
+		"bindings": [
+			{
+				"binding_name": "#student_button_visible",
+				"binding_type": "collection",
+				"binding_name_override": "#visible",
+				"binding_collection_name": "student_buttons_collection"
+			}
+		]
+	},
+
+    "ui_button": {
+		"type": "button",
+		"size": [
+			800,
+			800
+		],
+		"layer": 99,
+		"controls": [
+			{
+				"default@button_visual": {}
+			},
+			{
+				"hover@button_visual": {}
+			},
+			{
+				"pressed@button_visual": {}
+			}
+		],
+		"bindings": [
+			{
+				"binding_type": "collection_details",
+				"binding_collection_name": "student_buttons_collection",
+				"binding_collection_prefix": "student_buttons"
+			}
+		],
+		// "$focus_level|default": 0,
+
+        "focus_change_up": "close_button",
+        "focus_identifier": "continue_button",
+
+		"default_control": "default",
+		"hover_control": "hover",
+		"pressed_control": "pressed",
+		"sound_name": "random.tick",
+		"sound_volume": 1.0,
+		"sound_pitch": 1.0,
+
+		"focus_enabled": true,
+		"focus_wrap_enabled": false,
+		"default_focus_precedence": 100,
+
+		"button_mappings": [
+			{
+				"from_button_id": "button.menu_select",
+				"to_button_id": "button.student_button",
+				"mapping_type": "pressed"
+			},
+			{
+				"from_button_id": "button.menu_ok",
+				"to_button_id": "button.student_button",
+				"mapping_type": "focused"
+			}
+		]
+	},
+
+	"button_visual": {
+		"type": "panel",
+        "alpha": "@anim_button_fade_in",
+        "propagate_alpha": true,
+		"controls": [
+            {
+                "dropshadow": {
+                    "text": "be_npcinteract_button.continue",
+                    "color": "$close_button_dropshadow",
+                    "text_alignment": "center",
+                    "font_size": "normal",
+                    "font_scale_factor": 1.0,
+                    "shadow": false,
+                    "localize": true,
+                    "type": "label",
+                    "anchor_from": "center",
+                    "anchor_to": "center",
+                    "layer": 50,
+                    "offset": [1,1]
+                }
+			},
+			{
+                "button_label": {
+                    "text": "be_npcinteract_button.continue",
+                    "color": "$dialog_continue_button_color",
+                    "text_alignment": "center",
+                    "font_size": "normal",
+                    "font_scale_factor": 1.0,
+                    "shadow": false,
+                    "localize": true,
+                    "type": "label",
+                    "anchor_from": "center",
+                    "anchor_to": "center",
+                    "layer": 50
+                }
+			}
+		]
+	},
+
+    // alpha animation
+    "anim_button_fade_in": {
+        "anim_type": "alpha",
+        "duration": 2,
+        "easing": "linear",
+        "from": 0.2,
+        "to": 1,
+        "next": "@anim_button_fade_out"
+    },
+
+    "anim_button_fade_out": {
+        "anim_type": "alpha",
+        "duration": 2,
+        "easing": "linear",
+        "from": 1,
+        "to": 0.2,
+        "next": "@anim_button_fade_in"
+    },
+
+
+    
+    // button stuff
+    "x_close_button@be_dialogue.close_ui_button": {
+		"visible": true,
+        "layer": 100,
+        "offset": [8.5,-7.5],
+		"button_mappings": [
+			{
+				"from_button_id": "button.menu_select",
+				"to_button_id": "button.exit_basic",
+				"mapping_type": "pressed"
+			},
+			{
+				"from_button_id": "button.menu_ok",
+				"to_button_id": "button.exit_basic",
+				"mapping_type": "focused"
+			},
+			{
+				"from_button_id": "button.menu_cancel",
+				"to_button_id": "button.exit_basic",
+				"mapping_type": "global"
+			}
+		]
+	},
+    "close_ui_button": {
+		"type": "button",
+		// "size": [
+		// 	17,
+		// 	15
+		// ],
+        "size": [
+			34,
+			30
+		],
+
+        "anchor_from": "center",
+        "anchor_to": "center",
+
+		"controls": [
+			{
+                "default@close_button": {
+                    "$button_color": "$close_button_default_color"
+                }
+			},
+            {
+                "hover@close_button": {
+                    "$button_color": "$close_button_hover_color"
+                }
+            },
+            {
+                "pressed@close_button": {
+                    "$button_color": "$close_button_hover_color"
+                }
+            }
+		],
+		"default_control": "default",
+		"hover_control": "hover",
+		"pressed_control": "pressed",
+		"sound_name": "random.tick",
+
+        "focus_change_down": "continue_button",
+        "focus_identifier": "close_button",
+
+		"sound_volume": 1.0,
+		"sound_pitch": 1.0,
+        "focus_wrap_enabled": false,
+		"focus_enabled": false,
+		"default_focus_precedence": -100,
+
+
+		"button_mappings": [
+			{
+				"from_button_id": "button.menu_select",
+				"to_button_id": "button.exit_student",
+				"mapping_type": "pressed"
+			},
+			{
+				"from_button_id": "button.menu_ok",
+				"to_button_id": "button.exit_student",
+				"mapping_type": "focused"
+			},
+			{
+				"from_button_id": "button.menu_cancel",
+				"to_button_id": "button.exit_student",
+				"mapping_type": "global"
+			}
+		]
+	},
+    "close_button": {
+        "type": "panel",
+		"size": [
+			17,
+			15
+		],
+        "controls": [
+            {
+                "background": {
+                    "type": "image",
+                    "texture": "textures/ui/hud_tip_text_background",
+                    "alpha": "$dialogue_alpha",
+                    "size": [17,15],
+                    "controls": [
+                        {
+                            "shadow": {
+                                "type": "label",
+                                "text": "x",
+                                "anchor_from": "center",
+                                "anchor_to": "center",
+                                "color": "$close_button_dropshadow",
+                                "text_alignment": "center",
+                                "font_size": "normal",
+                                "font_scale_factor": 1.0,
+                                "shadow": false,
+                                "localize": false,
+                                "offset": [1.4,0.5]
+                            }
+                        },
+                        {
+                            "text": {
+                                "type": "label",
+                                "text": "x",
+                                "anchor_from": "center",
+                                "anchor_to": "center",
+                                "color": "$button_color",
+                                "text_alignment": "center",
+                                "font_size": "normal",
+                                "font_scale_factor": 1.0,
+                                "shadow": false,
+                                "localize": false,
+                                "offset": [0.4, -0.5]
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+
+
+
+    //Console to show
+    "close_text@common.gamepad_helper_b": {
+        "$gamepad_description": "npc_interact.gamepad_helper_exit_text"
+    },
+
+    "gamepad_helper_exit_text": {
+        "type": "label",
+        "text": "controller.buttonTip.exit",
+        "color": "$gamepad_description_text_color"
+    }
+}

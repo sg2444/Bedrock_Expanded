@@ -1,0 +1,31 @@
+Archetype,Tree,Skill,Effect
+Warrior,Brute Force,Power Strike,Melee attacks deal 10% more damage
+Warrior,Brute Force,Shockwave,Jumping and landing causes a minor AoE knockback
+Warrior,Brute Force,Iron Grip,You cannot be disarmed by enemy effects
+Warrior,Defender,Shield Wall,Blocking reduces damage by 30%
+Warrior,Defender,Bastion,Auto-heal 1 heart every 20s when under 3 hearts
+Warrior,Defender,Taunt Aura,Nearby enemies target you first
+Warrior,Warlord,Battle Cry,Temporarily buffs allies’ strength
+Warrior,Warlord,Adrenal Surge,Gain speed after killing an enemy
+Warrior,Warlord,Unyielding,1-time revive at 1 HP every hour
+Mage,Elementalism,Firebolt,Casts a small ranged fire attack
+Mage,Elementalism,Ice Shackles,Slows nearby enemies briefly
+Mage,Elementalism,Storm Burst,Random lightning bolt on critical hit
+Mage,Arcane Arts,Mana Channeling,Faster cooldowns on abilities
+Mage,Arcane Arts,Ley Lines,Standing still increases regen
+Mage,Arcane Arts,Blink,Short-range teleportation
+Mage,Necromancy,Raise Minion,Summon a zombie ally
+Mage,Necromancy,Life Leech,Regain health on enemy death
+Mage,Necromancy,Soul Armor,Temporary shield after casting
+Rogue,Shadowstep,Backstab,Bonus damage from behind
+Rogue,Shadowstep,Vanish,Invisible for 3s after crouching
+Rogue,Shadowstep,Shadow Clone,Decoy that distracts mobs
+Rogue,Trickery,Trap Mastery,Place bear traps and snares
+Rogue,Trickery,Poison Expert,Weapons apply poison
+Rogue,Trickery,Disarm Trap,Avoid damage from traps
+Rogue,Marksman,Eagle Eye,Zoom + increase projectile range
+Rogue,Marksman,Multishot,Chance to fire multiple arrows
+Rogue,Marksman,Armor Pierce,Ignore part of mob armor
+Utility,Universal,Explorer’s Instinct,Auto-mapping minimap effect
+Utility,Universal,Master Crafter,Bonus item yield from crafting
+Utility,Universal,Survivor’s Grit,Reduced hunger drain and fall damage

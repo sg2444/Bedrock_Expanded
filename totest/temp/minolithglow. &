@@ -1,0 +1,24 @@
+
+import { world } from "@minecraft/server";
+
+world.afterEvents.playerTick.subscribe(({ player }) => {
+  const raw = world.getDynamicProperty("monolithLocation");
+  if (!raw) return;
+
+  const { x, y, z } = JSON.parse(raw);
+  const dx = player.location.x - x;
+  const dy = player.location.y - y;
+  const dz = player.location.z - z;
+  const distSq = dx * dx + dy * dy + dz * dz;
+
+  if (distSq < 64) {
+    // Gentle soul aura glow
+    player.runCommandAsync(`particle soul ${x + 0.5} ${y + 1.4} ${z + 0.5} 0.1 0.2 0.1 0.01 1`);
+    player.runCommandAsync(`particle endRod ${x + 0.5} ${y + 2.2} ${z + 0.5} 0.05 0.1 0.05 0.01 2`);
+    
+    // Occasional portal sparkle
+    if (Math.random() < 0.1) {
+      player.runCommandAsync(`particle portal ${x + 0.5} ${y + 1.8} ${z + 0.5} 0.1 0.2 0.1 0.02 3`);
+    }
+  }
+});

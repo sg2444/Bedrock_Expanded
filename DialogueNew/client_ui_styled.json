@@ -1,0 +1,79 @@
+{
+  "screen_name": "dialogue_screen",
+  "controls": [
+    {
+      "type": "panel",
+      "size": [
+        300,
+        100
+      ],
+      "offset": [
+        0,
+        -90
+      ],
+      "anchor_from": "center",
+      "anchor_to": "center",
+      "color": "#2a2a2a",
+      "alpha": 0.95,
+      "controls": [
+        {
+          "type": "label",
+          "text": "@npc_line",
+          "binding_name": "npc_line",
+          "font_scale": 1.2,
+          "alignment": "center",
+          "text_color": "#ffffff"
+        }
+      ]
+    },
+    {
+      "type": "panel",
+      "size": [
+        300,
+        160
+      ],
+      "offset": [
+        0,
+        40
+      ],
+      "anchor_from": "center",
+      "anchor_to": "center",
+      "color": "#1c1c1c",
+      "alpha": 0.85,
+      "controls": [
+        {
+          "type": "button",
+          "text": "@option_1",
+          "binding_name": "option_1",
+          "on_press": "scriptevent dialogue.response_0",
+          "text_color": "#ffffff",
+          "hover_color": "#444444"
+        },
+        {
+          "type": "button",
+          "text": "@option_2",
+          "binding_name": "option_2",
+          "on_press": "scriptevent dialogue.response_1",
+          "text_color": "#ffffff",
+          "hover_color": "#444444"
+        },
+        {
+          "type": "button",
+          "text": "@option_3",
+          "binding_name": "option_3",
+          "on_press": "scriptevent dialogue.response_2",
+          "text_color": "#ffffff",
+          "hover_color": "#444444"
+        },
+        {
+          "type": "button",
+          "text": "@option_4",
+          "binding_name": "option_4",
+          "on_press": "scriptevent dialogue.response_3",
+          "text_color": "#ffffff",
+          "hover_color": "#444444"
+        }
+      ]
+    }
+  ]
+}

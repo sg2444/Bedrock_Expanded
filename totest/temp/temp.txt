@@ -1,0 +1,104 @@
+
+import { world } from "@minecraft/server";
+
+function clearConnectedTreeBlocks(startPos, dim, maxBlocks = 150) {
+  const visited = new Set();
+  const queue = [startPos];
+
+  const isTreeBlock = (typeId) =>
+    typeId.includes("log") || typeId.includes("leaves");
+
+  while (queue.length > 0 && visited.size < maxBlocks) {
+    const { x, y, z } = queue.shift();
+    const key = `${x},${y},${z}`;
+    if (visited.has(key)) continue;
+    visited.add(key);
+
+    const block = dim.getBlock({ x, y, z });
+    if (!block || !isTreeBlock(block.typeId)) continue;
+
+    block.setType("minecraft:air");
+
+    // Enqueue cardinal neighbors
+    for (const [dx, dy, dz] of [
+      [1, 0, 0], [-1, 0, 0], [0, 1, 0],
+      [0, -1, 0], [0, 0, 1], [0, 0, -1]
+    ]) {
+      queue.push({ x: x + dx, y: y + dy, z: z + dz });
+    }
+  }
+}
+
+world.afterEvents.playerSpawn.subscribe(({ player }) => {
+  const alreadyPlaced = world.getDynamicProperty("monolithPlaced");
+  if (alreadyPlaced) return;
+
+  const safeGroundTypes = [
+    "minecraft:grass_block", "minecraft:dirt", "minecraft:coarse_dirt",
+    "minecraft:stone", "minecraft:snow", "minecraft:snow_block",
+    "minecraft:sand", "minecraft:gravel"
+  ];
+
+  const dim = player.dimension;
+  const originX = Math.floor(player.location.x);
+  const originZ = Math.floor(player.location.z + 4);
+
+  const offsets = [
+    [0, 0], [4, 0], [-4, 0], [0, 4], [0, -4],
+    [4, 4], [-4, -4], [4, -4], [-4, 4],
+    [8, 0], [-8, 0], [0, 8], [0, -8]
+  ];
+
+  let placed = false;
+
+  for (const [ox, oz] of offsets) {
+    const x = originX + ox;
+    const z = originZ + oz;
+
+    for (let y = 128; y >= 60; y--) {
+      const block = dim.getBlock({ x, y, z });
+      if (!block || !safeGroundTypes.includes(block.typeId)) continue;
+
+      // Check for open sky
+      let openSky = true;
+      for (let i = 1; i <= 5; i++) {
+        const check = dim.getBlock({ x, y: y + i, z });
+        if (check?.typeId !== "minecraft:air") {
+          openSky = false;
+          break;
+        }
+      }
+      if (!openSky) continue;
+
+      // Smart tree scan
+      for (let dx = -2; dx <= 2; dx++) {
+        for (let dz = -2; dz <= 2; dz++) {
+          const testX = x + dx;
+          const testZ = z + dz;
+          const testBlock = dim.getBlock({ x: testX, y: y + 1, z: testZ });
+          if (!testBlock) continue;
+
+          const id = testBlock.typeId;
+          if (id.includes("log") || id.includes("leaves")) {
+            clearConnectedTreeBlocks({ x: testX, y: y + 1, z: testZ }, dim);
+          }
+        }
+      }
+
+      // Place structure
+      const placeY = y + 1;
+      dim.runCommandAsync(`structure load monolith ${x} ${placeY} ${z}`);
+      world.setDynamicProperty("monolithLocation", JSON.stringify({ x, y: placeY, z }));
+      world.setDynamicProperty("monolithPlaced", true);
+      player.sendMessage(`Â§a[World] Monolith placed at ${x}, ${placeY}, ${z}`);
+      placed = true;
+      break;
+    }
+
+    if (placed) break;
+  }
+
+  if (!placed) {
+    player.sendMessage("Â§c[World] Failed to find suitable spot for monolith.");
+  }
+});

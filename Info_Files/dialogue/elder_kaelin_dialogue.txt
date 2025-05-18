@@ -1,0 +1,9 @@
+# Elder Kaelin Dialogue Snippets
+
+[First Encounter - Before MQ01.5 complete]
+- "You say glyphs, glowing stone? I’ve seen them… long ago."
+- "There are stories, passed down. Of monoliths that hum with power. Only few remain."
+- "I fear this may be linked to the Deep Echoes... there's an old mine northeast of here. Tread carefully."
+
+[After MQ01.5 complete]
+- "Be cautious. The mine hasn’t been touched in decades, and something sleeps there still."

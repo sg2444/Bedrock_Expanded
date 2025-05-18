@@ -1,0 +1,54 @@
+{
+  "screen_name": "dialogue_screen",
+  "controls": [
+    {
+      "type": "panel",
+      "size": [
+        240,
+        60
+      ],
+      "offset": [
+        0,
+        -80
+      ],
+      "anchor_from": "center",
+      "anchor_to": "center",
+      "controls": [
+        {
+          "type": "label",
+          "text": "@npc_line",
+          "binding_name": "npc_line",
+          "font_scale": 1.1,
+          "alignment": "center"
+        }
+      ]
+    },
+    {
+      "type": "panel",
+      "size": [
+        240,
+        80
+      ],
+      "offset": [
+        0,
+        20
+      ],
+      "anchor_from": "center",
+      "anchor_to": "center",
+      "controls": [
+        {
+          "type": "button",
+          "text": "@option_1",
+          "binding_name": "option_1",
+          "on_press": "scriptevent dialogue.response_0"
+        },
+        {
+          "type": "button",
+          "text": "@option_2",
+          "binding_name": "option_2",
+          "on_press": "scriptevent dialogue.response_1"
+        }
+      ]
+    }
+  ]
+}

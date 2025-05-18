@@ -1,0 +1,22 @@
+{
+    "$global.ignored.title": "(not (#text > 'spark_hud:A' and #text < 'spark_hud:z'))",
+    "$global.ignored.actionbar": "(not ($atext > 'action.A' and $atext < 'spark_hud:z'))",
+    
+    "$global.hide.title": "spark_hud:hide_ui",
+
+    // server form
+    "$close_button_alpha": 0.7,
+    "$close_button_default_color": [0.803921568627451, 0.803921568627451, 0.803921568627451], //#CDCDCD
+    "$close_button_hover_color": [1,1,1], //#FFFFFF
+    "$close_button_dropshadow": [0,0,0], // #000000
+
+
+
+    // dialogue
+    "$dialogue_alpha": 0.7,
+
+    "$dialog_text_color": [0.8627450980392157, 0.8627450980392157, 0.8627450980392157], // #DCDCDC
+    "$dialog_text_dropshadow_color": [0.21176470588235294, 0.21176470588235294, 0.21176470588235294 ], //#363636
+
+    "$dialog_continue_button_color": [0.8470588235294118, 0.8470588235294118, 0.8470588235294118] // #D8D8D8
+}

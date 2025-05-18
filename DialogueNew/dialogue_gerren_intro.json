@@ -1,0 +1,45 @@
+{
+  "id": "gerren_intro",
+  "npc": "Gerren",
+  "flags_required": [
+    "MQ01_Completed"
+  ],
+  "nodes": [
+    {
+      "id": "start",
+      "npcLine": "Ah, you're the one Kaelin spoke of. Looking for the forge?",
+      "responses": [
+        {
+          "text": "Yes. I found this fragment\u2026",
+          "next": "compass"
+        },
+        {
+          "text": "Not now.",
+          "end": true
+        }
+      ]
+    },
+    {
+      "id": "compass",
+      "npcLine": "Then it's true. Let\u2019s forge the Enderheart Compass.",
+      "responses": [
+        {
+          "text": "Let\u2019s do it.",
+          "next": "complete"
+        }
+      ],
+      "commands": [
+        "scriptevent quest.mq02_start"
+      ]
+    },
+    {
+      "id": "complete",
+      "npcLine": "It\u2019s done. The compass will guide you.",
+      "responses": [],
+      "set_flags": [
+        "MQ02_Started"
+      ],
+      "end": true
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+# Villager Dialogue Snippets
+
+- "Did you see that stone? Gives me the chills just looking at it..."
+- "Kaelin’s the one you want. He knows the old stories."
+- "Strange glyphs, you say? Ask Elder Kaelin. He’s always talking about ancient things."
+- "Not my business, but if you’re hearing whispers… that ain’t normal."
+- "Did you hear? They say the stone glowed again last night."
+- "Kaelin went north. Said something in the glyphs told him to go. That was three days ago."
+- "You brought this. I saw it in the fire."
+- "He’s a chosen... did you feel the glyphs respond?"
+- "The torches lit themselves after the last shrine... that’s not right."
+- "We didn’t used to hear voices near the well. Now we do."
+- “Did you hear? They say the stone glowed again last night.”
+- “They whisper about echoes… I swear it wasn’t the wind.”
+
+

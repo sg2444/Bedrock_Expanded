@@ -1,0 +1,9 @@
+{
+    "namespace": "common",
+
+    "character_face@common.character_face": {
+        "type": "image",
+        "texture": "textures/ui/portraits/face_alex.png",
+        "size": [14, 14]
+    }
+}

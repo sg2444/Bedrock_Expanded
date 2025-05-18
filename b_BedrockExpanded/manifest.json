@@ -1,0 +1,42 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "Expanded Expanded",
+    "description": "Bedrock Expanded",
+    "uuid": "0a9c469b-c75c-4d6e-b67a-eb88af40be24",
+    "version": [
+      1,
+      0,
+      0
+    ],
+    "min_engine_version": [
+      1,
+      21,
+      80
+    ]
+  },
+  "modules": [
+    {
+      "description": "Script resources",
+      "language": "javascript",
+      "type": "script",
+      "uuid": "0e5f6823-72e0-4c61-974c-54732fcb529c",
+      "version": [
+        1,
+        0,
+        0
+      ],
+      "entry": "scripts/main.js"
+    },
+    {
+      "type": "data",
+      "uuid": "c38937a2-29ba-40e2-908e-fc90d8e11c8e",
+      "version": [1, 0, 0]
+    }
+  ],
+  "dependencies": [
+    {"module_name": "@minecraft/server","version": "2.0.0-beta"},
+    {"module_name": "@minecraft/server-ui", "version": "2.0.0-beta" },
+    {"uuid": "be0370e7-b147-4c30-833e-abae61092651","version": "1.0.0"}
+  ]
+}

@@ -1,0 +1,94 @@
+I. Village & Overworld Reactions
+A. Stillmere Villagers (Neutral/Default)
+Villagers will respond differently after MQ12 and your faction progression:
+
+If you chose Order of the Fragmented:
+
+“They say you silenced the stones. I sleep better now… but it’s so quiet.”
+
+“Did the glyphs really whisper, or was it just in our heads?”
+
+“The monoliths don’t pulse anymore. That’s your doing, right?”
+
+If you chose Echobound:
+
+“Sometimes I dream of your voice. Not yours exactly… but close.”
+
+“You opened the sky, didn’t you? I saw the light bloom over the shrine.”
+
+“We don’t understand what you did, but we feel it.”
+
+If you chose Monolith Keepers:
+
+“Things feel balanced now. Still strange… but less frightening.”
+
+“The glyphs murmur at night, but not like before. Softer.”
+
+“The kid at the well keeps repeating your name in their sleep.”
+
+B. Gerren the Blacksmith (if Blacksmithing Path taken)
+Default:
+
+“Infused stone, eh? Didn’t think I’d live to see it worked again.”
+
+Post-Anvil of Ancients:
+
+“Your hammer sings, same as mine once did. Maybe louder.”
+
+“That new alloy… feels like it remembers being a sword already.”
+
+If you completed Dreamwalker path as well:
+
+“You dream weapons before you forge them? That’s cheating.”
+
+C. Kaelin (if alive / vision form)
+If Order-aligned:
+
+“You chose silence. I understand. But sometimes, silence roars.”
+
+If Echobound-aligned:
+
+“I feared what you’d become. But perhaps I feared truth more.”
+
+If Keeper-aligned:
+
+“You held the world in your hand… and placed it back gently. Well done.”
+
+II. Echo Plane NPCs / Ghosts
+Depending on ending and alignment, Echo Plane spirits react to your presence:
+
+Order:
+
+“Sealbearer. You walk among us, but deny our voice.”
+
+“Even memory fears you now.”
+
+Echobound:
+
+“He returns. The echo’s echo. The voice within the voice.”
+
+“We sang your name. You sang back.”
+
+Keepers:
+
+“You walk the edge. Neither bound nor broken.”
+
+“You didn’t fix us. You didn’t fail us. You witnessed.”
+
+
+
+III. Environmental Feedback
+Monolith Changes
+Order: glow fades to dim blue or extinguishes entirely.
+Echobound: pulsates with brighter hues, whisper audio loops.
+Keepers: steady ambient hum, with occasional dream flickers nearby.
+
+Dream Events
+If Dreamwalker path completed:
+
+Villagers may “echo” one of your choices at night.
+
+Shrines may show your past dialogue or choices faintly.
+
+Passive whispers reference your memory gift or Echo duel.
+

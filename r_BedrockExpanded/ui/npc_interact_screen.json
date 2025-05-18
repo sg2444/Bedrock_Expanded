@@ -1,0 +1,61 @@
+{
+  "namespace": "npc_interact",
+  "npc_screen@common.base_screen": {
+    "screen_draws_last": false,
+    "force_render_below": false,
+    "close_on_player_hurt": true,
+
+    "$screen_content": "npc_interact.custom_npc_screen_contents",
+
+    "absorbs_input": true,
+    "type": "screen",
+    "$screen_animations": [],
+    "$background_animations": [],
+
+    "button_mappings": [
+      {
+        "from_button_id": "button.menu_exit",
+        "to_button_id": "button.menu_continue",
+        "mapping_type": "global"
+      }
+    ]
+  },
+
+  "custom_npc_screen_contents": {
+    "type": "panel",
+    "bindings": [
+      {
+        "binding_name": "#dialogtext",
+        "binding_type": "global"
+      },
+      /* 				{
+				"binding_name": "#npc_name",
+				"binding_type": "global"
+				}, */
+      {
+        "binding_name": "#student_buttons_collection",
+        "binding_type": "global"
+      }
+    ],
+    "controls": [
+      {
+        "npc_dialogue_fetch_apples@be_dialogue.root": {
+          "$npc_name": "be.npc.blacksmith.name",
+          "$npc_strip_value": "npc.fetch_apples",
+          "bindings": [
+            {
+              "binding_name": "#dialogtext",
+              "binding_type": "global"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "(not((#dialogtext - 'npc.fetch_apples') = #dialogtext))",
+              //"source_property_name": "(#dialogtext = 'npc.fetch_apples')",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

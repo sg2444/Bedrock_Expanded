@@ -1,0 +1,86 @@
+{
+  "format_version": "1.19.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "be:kaelin",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false,
+      "default_name": "Elder Kaelin",
+      "tags": ["questgiver", "main_npc"]
+    },
+    "components": {
+      "minecraft:collision_box": {
+        "height": 0,
+        "width": 0
+      },
+      "minecraft:custom_hit_test": {
+        "hitboxes": [
+          {
+            "height": 2,
+            "width": 1.5,
+            "pivot": [0, 1, 0]
+          }
+        ]
+      },
+      "minecraft:health": {
+        "max": 1,
+        "min": 1,
+        "value": 1
+      },
+      "minecraft:physics": {
+        "has_collision": true,
+        "has_gravity": true
+      },
+      "minecraft:type_family": { "family": ["npc"] },
+      //"minecraft:nameable": { "always_show": true },
+      "minecraft:npc": {
+        "npc_data": {}
+      },
+      "minecraft:interact": {
+        "interactions": [
+          {
+            "use_item": false,
+            "interact_text": "Testing within Kaelin.json",
+            /*             "on_interact": {
+                "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "player"
+                },
+                "event": "be:start_gerren_dialogue",
+                "text": "Talk to Gerren"
+            } */
+            "on_interact": {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "player"
+              },
+              "event": "be:start_gerren_dialogue",
+              "text": "Talk to Gerren"
+            }
+          }
+        ]
+      }
+    },
+    "events": {
+      "be:start_gerren_dialogue": {
+        "sequence": [
+          {
+            "queue_command": {
+              "command": "scriptevent dialogue:interact_dialogue",
+              "target": "other"
+            }
+          },
+          {
+            "queue_command": {
+              "command": "scriptevent dialogue:interact_dialogue",
+              "target": "self"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

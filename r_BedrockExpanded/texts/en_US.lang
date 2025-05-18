@@ -1,0 +1,40 @@
+
+tile.be:infused_stone.name=Infused Stone
+be_npcinteract_button.continue=Continue	#
+
+entity.be.gerren.name=BlackSmith Gerren
+
+be.npc.gareth.name= Blacksmith
+be.npc.blacksmith.name= Blacksmith
+be.npc.test_2.name= NPC 2
+be.npc.test_3.name= NPC 3
+be.npc.test_4.name= NPC 4
+be.npc.test_5.name= NPC 5
+be.npc.test_6.name= NPC 6
+be.npc.test_7.name= NPC 7
+be.npc.test_8.name= NPC 8
+be.npc.test_9.name= NPC 9
+be.npc.test_10.name= NPC 10
+be.npc.test_11.name= NPC 11
+be.npc.test_12.name= NPC 12
+be.npc.test_13.name= NPC 13
+be.npc.test_14.name= NPC 14
+be.npc.test_15.name= NPC 15
+
+be.npc.test_16.name= NPC 16
+be.npc.test_17.name= NPC 17
+be.npc.test_18.name= NPC 18
+be.npc.test_19.name= NPC 19
+be.npc.test_20.name= NPC 20
+be.npc.test_21.name= NPC 21
+be.npc.test_22.name= NPC 22
+be.npc.test_23.name= NPC 23
+be.npc.test_24.name= NPC 24
+be.npc.test_25.name= NPC 25
+be.npc.test_26.name= NPC 26
+be.npc.test_27.name= NPC 27
+be.npc.test_28.name= NPC 28
+be.npc.test_29.name= NPC 29
+be.npc.test_30.name= NPC 30
+be.npc.test_31.name= NPC 31
+

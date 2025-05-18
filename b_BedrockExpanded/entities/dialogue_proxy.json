@@ -1,0 +1,24 @@
+{
+  "format_version": "1.20.40",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "be:dialogue_proxy",
+      "is_spawnable": true,
+      "is_summonable": true
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": ["npc"]
+      },
+      "minecraft:npc": {},
+      "minecraft:is_hidden_when_invisible": {},
+      "minecraft:movement": { "value": 0 },
+      "minecraft:health": { "value": 1, "max": 1 }
+    },
+    "events": {
+      "despawn": {
+        "remove": {}
+      }
+    }
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "format_version": "1.20.40",
+  "minecraft:npc_dialogue": {
+    "scenes": [
+      {
+        "scene_tag": "custom.dialogue.villager.0",
+        "npc_name": { "rawtext": [{ "text": "" }] },
+        "text": {
+          "rawtext": [{ "text": "Welcome, traveler. Need something?" }]
+        },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "text": "Continue" }] },
+            "commands": []
+          }
+        ],
+        "on_open_commands": []
+      },
+      {
+        "scene_tag": "custom.dialogue.villager.1",
+        "npc_name": { "rawtext": [{ "text": "" }] },
+        "text": {
+          "rawtext": [{ "text": "These are peaceful lands... most of the time." }]
+        },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "text": "Continue" }] },
+            "commands": []
+          }
+        ],
+        "on_open_commands": []
+      },
+      {
+        "scene_tag": "custom.dialogue.villager.2",
+        "npc_name": { "rawtext": [{ "text": "" }] },
+        "text": {
+          "rawtext": [{ "text": "I once traded a diamond for a potato. Regrets." }]
+        },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "text": "Continue" }] },
+            "commands": []
+          }
+        ],
+        "on_open_commands": []
+      },
+      {
+        "scene_tag": "custom.dialogue.villager.3",
+        "npc_name": { "rawtext": [{ "text": "" }] },
+        "text": {
+          "rawtext": [{ "text": "Careful out there. The nights are dangerous." }]
+        },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "text": "Continue" }] },
+            "commands": []
+          }
+        ],
+        "on_open_commands": []
+      },
+      {
+        "scene_tag": "custom.dialogue.villager.4",
+        "npc_name": { "rawtext": [{ "text": "" }] },
+        "text": {
+          "rawtext": [{ "text": "Every block tells a story. Even the dirt." }]
+        },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "text": "Continue" }] },
+            "commands": []
+          }
+        ],
+        "on_open_commands": []
+      }
+    ]
+  }
+}

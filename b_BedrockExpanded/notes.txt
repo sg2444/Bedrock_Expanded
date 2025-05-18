@@ -1,0 +1,59 @@
+
+
+Deep cleaned Objectives --  pretty happy now these are very consistent.
+Do we need to do quests:?
+
+---------
+
+UI can't get multiple buttons working - check movie pack?
+
+
+-----
+
+custom components? eg questgiver on npc? 
+
+----//
+
+should events such as item collection register like script
+
+---------
+Check imports
+
+---------
+
+not receiving on complete rewards for Quests
+
+----------------------------------------------
+
+Monolith Spawn not guaranteed and needs work
+
+
+-------------------------------------------
+AI Questions worth following up on
+1. Would you like help adding a new objective type (e.g. locationVisit, mobKill) or implementing branching quest stages next?
+
+
+--------
+
+WORK-IN-PROGRESS
+
+Text to search to come back to.
+
+showDialogueIntro needs clearning
+
+
+
+-----
+
+
+
+
+Crypt generation
+
+Crypt_feature.json    --- feature generates the top well. The well contains a command block that calls function generate dungeon
+
+minecraft entity crypt.json is summoned, this checks y level if >= 50 create a tunnel and continue to until <50 creates the crypt crypt_start
+four room is generated and then has four command blocks going each way
+
+these call mcfuncctions that 
+
